@@ -1,0 +1,15 @@
+{% extends '@email/default/notification/body.html.twig' %}
+    
+{% block content %}
+    <container>
+        <row>
+            <columns>
+                <h1>Bienvenue sur votre nouveau gestionnaire de fichiers {{ firstName }} !</h1>
+            </columns>
+        </row>
+    </container>
+{% endblock %}
+
+{% block action %}
+    <button href="http://localhost:5173/" class="button">Accéder à votre drive</button>
+{% endblock %}

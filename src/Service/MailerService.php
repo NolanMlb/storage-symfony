@@ -15,14 +15,17 @@ class MailerService
 
     }
 
-    public function sendWelcomeEmail(): void
+    public function sendWelcomeEmail(string $userEmail, string $firstName): void
     {
         
         $email = (new NotificationEmail())
             ->from($this->adminEmail)
-            ->to($this ->adminEmail)
-            ->subject('Welcome to our website')
-            ->text('Thank you for signing up to our website!');
+            ->to($userEmail)
+            ->htmlTemplate('emails/welcome.html.twig')
+            ->subject('Bienvenue' . $firstName)
+            ->context([
+                'firstName' => $firstName,
+            ]);
 
         $this->mailer->send($email);
     }
