@@ -24,7 +24,7 @@ class MailerService
             ->htmlTemplate('emails/welcome.html.twig', [
                 'firstName' => $firstName,
             ])
-            ->subject('Bienvenue' . $firstName)
+            ->subject('Bienvenue ' . $firstName)
             ->context([
                 'firstName' => $firstName,
             ]);
