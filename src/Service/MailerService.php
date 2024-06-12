@@ -21,7 +21,9 @@ class MailerService
         $email = (new NotificationEmail())
             ->from($this->adminEmail)
             ->to($userEmail)
-            ->htmlTemplate('emails/welcome.html.twig')
+            ->htmlTemplate('emails/welcome.html.twig', [
+                'firstName' => $firstName,
+            ])
             ->subject('Bienvenue' . $firstName)
             ->context([
                 'firstName' => $firstName,

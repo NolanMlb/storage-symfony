@@ -17,7 +17,7 @@ class HomeController extends AbstractController
         return new JsonResponse(['status' => 'OK']);
     }
 
-    #[Route('/mail/welcome', name: 'app_welcome_mail', methods: ['POST'])]
+    #[Route('/mailer/mail/welcome', name: 'app_welcome_mail', methods: ['POST'])]
     public function welcomeEmail(Request $request, MailerService $mailerService, LoggerInterface $logger): JsonResponse
     {
         $logger->info('Received request at /mail/welcome');
